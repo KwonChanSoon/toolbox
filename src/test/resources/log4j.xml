@@ -12,10 +12,10 @@
   <logger name="org.springframework">
     <level value="WARN" />
   </logger>
-  <logger name="ep.pericles">
+  <logger name="eu.qualityontime">
     <level value="OFF" />
   </logger>
-  <logger name="ep.pericles.time.HierarchicalStopwatch">
+  <logger name="eu.qualityontime.time.HierarchicalStopwatch">
     <level value="DEBUG" />
   </logger>
 

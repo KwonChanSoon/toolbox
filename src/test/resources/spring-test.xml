@@ -12,7 +12,7 @@
                 http://www.springframework.org/schema/cache http://www.springframework.org/schema/cache/spring-cache.xsd
                 http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task-3.1.xsd">
 
-    <context:component-scan base-package="ep.pericles.cache" />
+    <context:component-scan base-package="eu.qualityontime.cache" />
 
 	<import resource="spring-cache.xml" />
 </beans>

@@ -1,6 +1,6 @@
 package ec.ep.pericles.service.services.impl.comparator;
 
-import static ep.pericles.commons.JakartaPropertyUtils.set;
+import static eu.qualityontime.commons.JakartaPropertyUtils.set;
 
 import org.junit.*;
 

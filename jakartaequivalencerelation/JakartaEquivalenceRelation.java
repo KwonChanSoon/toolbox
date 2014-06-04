@@ -1,7 +1,7 @@
 package ec.ep.pericles.service.services.impl.comparator;
 
-import static ep.pericles.AppStrings.rs;
-import static ep.pericles.commons.JakartaPropertyUtils.getPropertyDescriptors;
+import static eu.qualityontime.AppStrings.rs;
+import static eu.qualityontime.commons.JakartaPropertyUtils.getPropertyDescriptors;
 
 import java.beans.PropertyDescriptor;
 import java.util.*;
@@ -10,9 +10,9 @@ import org.apache.commons.lang3.tuple.Pair;
 
 import com.google.common.base.*;
 
-import ep.pericles.*;
-import ep.pericles.commons.JakartaPropertyUtils;
-import ep.pericles.functionals.FIterable;
+import eu.qualityontime.*;
+import eu.qualityontime.commons.JakartaPropertyUtils;
+import eu.qualityontime.functionals.FIterable;
 
 public class JakartaEquivalenceRelation extends ReportingEquivalenceRelation {
   private Set<Pair<Integer, Integer>> registry = new HashSet<Pair<Integer, Integer>>();

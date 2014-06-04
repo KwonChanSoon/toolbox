@@ -6,7 +6,8 @@ import org.apache.tools.ant.filters.*
 
 
 apply plugin: 'java'
-	
+apply plugin: 'idea'
+
 	configurations.compile.transitive = true
 	compileJava.options.encoding = 'UTF-8'
 	

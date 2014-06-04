@@ -10,7 +10,7 @@
                 http://www.springframework.org/schema/cache http://www.springframework.org/schema/cache/spring-cache.xsd">
 
 	<cache:annotation-driven key-generator="app_key_generator" />
-	<bean id="app_key_generator" class="ep.pericles.cache.AppKeyGenerator" />
+	<bean id="app_key_generator" class="eu.qualityontime.cache.AppKeyGenerator" />
 	<bean id="cacheManager" class="org.springframework.cache.support.SimpleCacheManager">
 		<property name="caches">
 			<set>

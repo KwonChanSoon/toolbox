@@ -1,21 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <parent>
-    <groupId>ep-foundry.maven2poms</groupId>
-    <artifactId>ep-foundry-maven2-pom-global</artifactId>
-    <version>0.0.4</version>
-    <relativePath>../Pericles-pom-global</relativePath>
-  </parent>
   <groupId>ec.ep.pericles</groupId>
   <artifactId>toolbox</artifactId>
   <version>${version}</version>
   <packaging>jar</packaging>
   <name>toolbox</name>
   <description>Toolbox containig generalutility apis</description>
-  <properties>
-    <runSuite>**/AllTestSuite.class</runSuite>
-  </properties>
   <build>
     <plugins>
       <plugin>
@@ -25,15 +16,6 @@
           <source>1.6</source>
           <target>1.6</target>
           <encoding>UTF-8</encoding>
-        </configuration>
-      </plugin>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-surefire-plugin</artifactId>
-        <configuration>
-          <includes>
-            <include>${runSuite}</include>
-          </includes>
         </configuration>
       </plugin>
     </plugins>
@@ -70,37 +52,37 @@
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-jdbc</artifactId>
-      <version>${spring.version}</version>
+      <version>3.1.1.RELEASE</version>
       <optional>true</optional>
     </dependency>
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-web</artifactId>
-      <version>${spring.version}</version>
+      <version>3.1.1.RELEASE</version>
       <optional>true</optional>
     </dependency>
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-webmvc</artifactId>
-      <version>${spring.version}</version>
+      <version>3.1.1.RELEASE</version>
       <optional>true</optional>
     </dependency>
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-core</artifactId>
-      <version>${spring.version}</version>
+      <version>3.1.1.RELEASE</version>
       <optional>true</optional>
     </dependency>
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-aop</artifactId>
-      <version>${spring.version}</version>
+      <version>3.1.1.RELEASE</version>
       <optional>true</optional>
     </dependency>
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-aspects</artifactId>
-      <version>${spring.version}</version>
+      <version>3.1.1.RELEASE</version>
       <optional>true</optional>
     </dependency>
     <dependency>
@@ -112,67 +94,67 @@
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-asm</artifactId>
-      <version>${spring.version}</version>
+      <version>3.1.1.RELEASE</version>
       <optional>true</optional>
     </dependency>
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-beans</artifactId>
-      <version>${spring.version}</version>
+      <version>3.1.1.RELEASE</version>
       <optional>true</optional>
     </dependency>
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-context</artifactId>
-      <version>${spring.version}</version>
+      <version>3.1.1.RELEASE</version>
       <optional>true</optional>
     </dependency>
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-expression</artifactId>
-      <version>${spring.version}</version>
+      <version>3.1.1.RELEASE</version>
       <optional>true</optional>
     </dependency>
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-instrument</artifactId>
-      <version>${spring.version}</version>
+      <version>3.1.1.RELEASE</version>
       <optional>true</optional>
     </dependency>
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-jms</artifactId>
-      <version>${spring.version}</version>
+      <version>3.1.1.RELEASE</version>
       <optional>true</optional>
     </dependency>
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-orm</artifactId>
-      <version>${spring.version}</version>
+      <version>3.1.1.RELEASE</version>
       <optional>true</optional>
     </dependency>
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-oxm</artifactId>
-      <version>${spring.version}</version>
+      <version>3.1.1.RELEASE</version>
       <optional>true</optional>
     </dependency>
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-tx</artifactId>
-      <version>${spring.version}</version>
+      <version>3.1.1.RELEASE</version>
       <optional>true</optional>
     </dependency>
     <dependency>
       <groupId>com.google.guava</groupId>
       <artifactId>guava</artifactId>
-      <version>${guava.version}</version>
+      <version>15.0</version>
     </dependency>
     <!-- ==================== TOOLBOX for TESTING ========================= -->
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
-      <version>${junit.version}</version>
+      <version>4.11</version>
       <optional>true</optional>
     </dependency>
     <dependency>
@@ -209,7 +191,7 @@
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-test</artifactId>
-      <version>${spring.version}</version>
+      <version>3.1.1.RELEASE</version>
       <scope>test</scope>
     </dependency>
     <dependency>
