@@ -9,6 +9,7 @@ import java.sql.Timestamp;
 import java.text.*;
 import java.util.*;
 
+import com.google.common.base.Objects;
 import org.apache.commons.lang3.*;
 import org.joda.time.*;
 
@@ -466,7 +467,7 @@ public class AppDate {
   }
 
   public static String dayNameOfWeek(Date d) {
-    return new DateMidnight(d).dayOfWeek().getAsText();
+    return new DateMidnight(d).dayOfWeek().getAsText(Locale.ENGLISH);
   }
 
   public static Date week_ago(Date ref) {

@@ -384,11 +384,7 @@ public class AppCollections {
     return map;
   }
 
-  public static <K, V> Map<K, V> Map(Class<K> kc, Class<V> vc, Object... objects) {
-    return Map(objects);
-  }
-
-  public static <K, V> Map<K, V> Map(Object... objects) {
+  private static <K, V> Map<K, V> Map(Object... objects) {
     if (null == objects || 0 == objects.length) {
       return ImmutableMap.of();
     }
