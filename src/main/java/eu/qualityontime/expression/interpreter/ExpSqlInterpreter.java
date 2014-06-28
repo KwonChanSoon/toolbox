@@ -1,22 +1,19 @@
 package eu.qualityontime.expression.interpreter;
 
+import com.google.common.base.*;
+import com.google.common.collect.*;
+import eu.qualityontime.*;
+import eu.qualityontime.collections.*;
+import eu.qualityontime.expression.*;
+import eu.qualityontime.visitor.*;
+import org.apache.commons.lang3.StringUtils;
+
+import java.util.*;
+
 import static eu.qualityontime.AppCollections.Map;
 import static eu.qualityontime.AppObjects.cast;
 import static eu.qualityontime.AppStrings.rs;
 import static eu.qualityontime.expression.BinaryOp.*;
-
-import java.util.*;
-
-import org.apache.commons.lang3.StringUtils;
-
-import com.google.common.base.*;
-import com.google.common.collect.*;
-
-import eu.qualityontime.*;
-import eu.qualityontime.collections.*;
-import eu.qualityontime.expression.*;
-import eu.qualityontime.tuple.Pair;
-import eu.qualityontime.visitor.*;
 
 public class ExpSqlInterpreter extends ReflectiveFunctionVisitor<String> implements ExpInterpreter {
   /**
@@ -76,9 +73,6 @@ public class ExpSqlInterpreter extends ReflectiveFunctionVisitor<String> impleme
     return comment + super.visit(o);
   }
 
-  public Pair<String, Map<String, Object>> getQuery() {
-    return Pair.of(getSql(), getParams());
-  }
 
   public String getSql() {
     return print.toString();

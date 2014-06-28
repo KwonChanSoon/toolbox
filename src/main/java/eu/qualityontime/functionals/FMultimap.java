@@ -5,6 +5,8 @@ import com.google.common.collect.*;
 
 import eu.qualityontime.AppCollections;
 
+import java.util.Collection;
+
 public class FMultimap<K, V> extends ForwardingMultimap<K, V> {
   private final Multimap<K, V> multimap;
 
@@ -33,5 +35,11 @@ public class FMultimap<K, V> extends ForwardingMultimap<K, V> {
   protected Multimap<K, V> delegate() {
     return multimap;
   }
+
+  @Override
+  public FMap<K, Collection<V>> asMap() {
+    return FMap.FMap(super.asMap());
+  }
+
 
 }

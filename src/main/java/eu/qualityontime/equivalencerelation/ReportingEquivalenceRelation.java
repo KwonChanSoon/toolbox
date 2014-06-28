@@ -1,4 +1,4 @@
-package ec.ep.pericles.service.services.impl.comparator;
+package eu.qualityontime.equivalencerelation;
 
 import java.util.*;
 

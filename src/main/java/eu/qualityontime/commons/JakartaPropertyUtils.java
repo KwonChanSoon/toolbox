@@ -139,6 +139,13 @@ public class JakartaPropertyUtils {
       throw new RuntimeException(e);
     }
   }
+  public static void set(Object bean, String name, Object value) {
+    try {
+      PropertyUtils.setProperty(bean, name, value);
+    } catch (Exception e) {
+      throw new RuntimeException(e);
+    }
+  }
 
   /**
    * Verifies whether the param Map contains the same or less keys as the target object properties.

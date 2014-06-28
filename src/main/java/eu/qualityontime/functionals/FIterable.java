@@ -6,6 +6,7 @@ import com.google.common.base.*;
 import com.google.common.collect.*;
 
 import eu.qualityontime.*;
+import eu.qualityontime.web.GsonHelper;
 
 /**
  * Functional Iterable. Similar wht Java 8 will have in the future.
@@ -37,6 +38,9 @@ public class FIterable<T> implements Iterable<T> {
    * `from` and `with` are synonims
    */
   public static <E> FIterable<E> with(final Iterable<E> iterable) {
+    if (null == iterable) {
+      return new FIterable<E>(ImmutableList.<E> of());
+    }
     return (iterable instanceof FIterable) ? (FIterable<E>) iterable : new FIterable<E>(iterable);
   }
 
@@ -89,6 +93,10 @@ public class FIterable<T> implements Iterable<T> {
 
   public <O> FMultimap<O, T> groupBy(Function<T, O> keyFunctions) {
     return FMultimap.FMultimap(Multimaps.index(this.iterable, keyFunctions));
+  }
+
+  public <O> FMap<O, T> toMap(Function<T, O> keyFunctions) {
+    return FMap.FMap(Maps.uniqueIndex(this.iterable, keyFunctions));
   }
 
   public FIterable<T> sort(Comparator<T> comparator) {
@@ -159,5 +167,32 @@ public class FIterable<T> implements Iterable<T> {
   public <A> FIterable<A> pluck(String attribute, Class<A> clazz) {
     Function<T, A> fieldExtractor = AppFunction.byProp(attribute, clazz);
     return this.map(fieldExtractor);
+  }
+
+  /**
+   * @return null if not found
+   */
+  public T find(Predicate<? super T> p) {
+    Optional<T> r = tryFind(p);
+    if (r.isPresent()) {
+      return r.get();
+    }
+    return null;
+  }
+
+  public Optional<T> tryFind(Predicate<? super T> p) {
+    return Iterables.tryFind(this.iterable, p);
+  }
+
+  public T first() {
+    return Iterables.getFirst(this.iterable, null);
+  }
+
+  public T first(T defaultValue) {
+    return Iterables.getFirst(this.iterable, defaultValue);
+  }
+
+  public String toJson() {
+    return GsonHelper.toJson(this.asList());
   }
 }

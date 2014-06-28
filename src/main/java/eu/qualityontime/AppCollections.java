@@ -1,31 +1,14 @@
 package eu.qualityontime;
 
-import static eu.qualityontime.AppObjects.cast;
+import com.google.common.base.*;
+import com.google.common.collect.*;
 
 import java.util.*;
 import java.util.Map.Entry;
 
-import com.google.common.base.*;
-import com.google.common.collect.*;
-
-import eu.qualityontime.tuple.Pair;
+import static eu.qualityontime.AppObjects.cast;
 
 public class AppCollections {
-  public static <K, V> Map<K, V> toMap(Pair<K, V>... kvs) {
-    ImmutableMap.Builder<K, V> b = ImmutableMap.builder();
-    for (Pair<K, V> p : kvs) {
-      b.put(p);
-    }
-    return b.build();
-  }
-
-  public static <K, V> Map<K, V> toMap(Collection<Pair<K, V>> kvs) {
-    ImmutableMap.Builder<K, V> b = ImmutableMap.builder();
-    for (Pair<K, V> p : kvs) {
-      b.put(p);
-    }
-    return b.build();
-  }
 
   public static <E> List<E> List() {
     return new ArrayList<E>();
@@ -357,10 +340,10 @@ public class AppCollections {
   }
 
   /**
-   * Usefull when you want to achieve unique set of obejcts (by some certain fields)
+   * Useful when you want to achieve unique set of objects (by some certain fields)
    * but for some reason you do not want to override `hashCode` and `equals` methods.
-   * Why not override? becouse italready have an implementation you do not want to change
-   * becouse otherpart of the systsem is relying on that implementation.
+   * Why not override? because it already have an implementation you do not want to change
+   * because other part of the system is relying on that implementation.
    */
   public static <T> Set<T> customUniqSet(Collection<T> in, Function<T, Object> extractor) {
     Set<CustomSetWrapper<T>> tmp = new HashSet<AppCollections.CustomSetWrapper<T>>(in.size());
@@ -388,7 +371,7 @@ public class AppCollections {
     if (null == objects || 0 == objects.length) {
       return ImmutableMap.of();
     }
-    Preconditions.checkArgument(objects.length % 2 == 0, "key value pairs are expected so always even (devidable by 2)");
+    Preconditions.checkArgument(objects.length % 2 == 0, "key value pairs are expected so always even (dividable by 2)");
     HashMap<K, V> ret = new HashMap<K, V>();
     for (int i = 0; i < objects.length; i += 2) {
       K k = cast(objects[i]);

@@ -87,24 +87,6 @@ public class AppCollectionsTest {
     assertEquals(new Integer(100), r);
   }
 
-  @Test
-  public void test_transforValue_Multimap() {
-    ListMultimap<String, Integer> in = ArrayListMultimap.create();
-    in.put("odd", 1);
-    in.put("odd", 3);
-    in.put("even", 2);
-    ListMultimap<String, String> expected = ArrayListMultimap.create();
-    expected.put("odd", "1");
-    expected.put("odd", "3");
-    expected.put("even", "2");
-    ListMultimap<String, String> res = AppCollections.transformValues(in, new Function<Integer, String>() {
-      @Override
-      public String apply(Integer input) {
-        return "" + input;
-      }
-    });
-    assertEquals(expected, res);
-  }
 
   @Test
   public void customUniqSet() {

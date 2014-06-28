@@ -1,4 +1,4 @@
-package ec.ep.pericles.service.services.impl.comparator;
+package eu.qualityontime.equivalencerelation;
 
 import static eu.qualityontime.AppStrings.rs;
 import static eu.qualityontime.commons.JakartaPropertyUtils.getPropertyDescriptors;
@@ -51,7 +51,7 @@ public class JakartaEquivalenceRelation extends ReportingEquivalenceRelation {
       return equalsList(o1, o2);
     }
     if (isSet(o1)) {
-      throw new RuntimeException("Set equvalence isnot supported");
+      throw new RuntimeException("Set equivalence is not supported");
     }
     if (isMap(o1)) {
       return equalsMap(o1, o2);

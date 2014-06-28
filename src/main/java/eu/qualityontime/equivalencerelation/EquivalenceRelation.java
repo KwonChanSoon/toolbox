@@ -1,4 +1,4 @@
-package ec.ep.pericles.service.services.impl.comparator;
+package eu.qualityontime.equivalencerelation;
 
 public interface EquivalenceRelation {
   public final static EquivalenceRelation DEFAULT = new EquivalenceRelation() {

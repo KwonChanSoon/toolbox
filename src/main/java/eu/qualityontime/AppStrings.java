@@ -7,15 +7,9 @@ import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.text.StrSubstitutor;
 import org.slf4j.helpers.MessageFormatter;
 
-import eu.qualityontime.tuple.Pair;
 
 public class AppStrings {
-  /**
-   * commons lang StrSubstitutor
-   */
-  public static <T extends Object> String replace(String src, Pair<String, T>... params) {
-    return StrSubstitutor.replace(src, AppCollections.toMap(params));
-  }
+
 
   /**
    * commons lang StrSubstitutor
@@ -25,12 +19,6 @@ public class AppStrings {
     return StrSubstitutor.replace(src, (Map<String, V>) m);
   }
 
-  /**
-   * commons lang StrSubstitutor
-   */
-  public static <T extends Object> String replace(String src, Collection<Pair<String, T>> params) {
-    return StrSubstitutor.replace(src, AppCollections.toMap(params));
-  }
 
   public static String chop(String src, int to, String append) {
     return StringUtils.substring(src, 0, to) + (src.length() > to ? append : "");
