@@ -195,4 +195,11 @@ public class FIterable<T> implements Iterable<T> {
   public String toJson() {
     return GsonHelper.toJson(this.asList());
   }
+
+  public <C> C foldLeft(C init, F2<C, T, C> reducer) {
+    for (T i : this.iterable) {
+      init = reducer.f(init, i);
+    }
+    return init;
+  }
 }

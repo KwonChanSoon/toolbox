@@ -125,4 +125,23 @@ public class FunctionalsTest {
     FIterable<String> is = i.cast(String.class);
     assertNotNull(is);
   }
+
+  @Test
+  public void foldLeft() throws Exception {
+    Integer res = FIterable(IList(1, 2, 3, 4)).foldLeft(0, new F2.Collector<Integer, Integer>() {
+      @Override
+      public Integer f(Integer p1, Integer p2) {
+        return p1 + p2;
+      }
+    });
+    assertEquals(10, res.intValue());
+
+    String longestString = FIterable(IList("aaaaa", "a", "qqqqqqqqqqq", "bb")).foldLeft("", new F2.Simple<String>() {
+      @Override
+      public String f(String p1, String p2) {
+        return p1.length() > p2.length() ? p1 : p2;
+      }
+    });
+    assertEquals("qqqqqqqqqqq", longestString);
+  }
 }
