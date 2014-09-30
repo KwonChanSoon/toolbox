@@ -1,7 +1,7 @@
 package eu.qualityontime.diff;
 
-import static ep.pericles.AppCollections.IList;
-import static ep.pericles.AppDate.date;
+import static eu.qualityontime.AppCollections.IList;
+import static eu.qualityontime.AppDate.date;
 import static org.junit.Assert.*;
 
 import java.math.BigDecimal;
@@ -16,12 +16,12 @@ import com.google.common.base.Predicate;
 import com.google.common.collect.Iterables;
 
 import de.bechte.junit.runners.context.HierarchicalContextRunner;
-import ep.pericles.AppPredicates;
-import ep.pericles.util.diff.DiffNode.State;
-import ep.pericles.util.diff.DiffSampleMother.A;
-import ep.pericles.util.diff.DiffSampleMother.B;
-import ep.pericles.util.diff.DiffSampleMother.C;
-import ep.pericles.util.diff.DiffSampleMother.Parent;
+import eu.qualityontime.AppPredicates;
+import eu.qualityontime.diff.DiffNode.State;
+import eu.qualityontime.diff.DiffSampleMother.A;
+import eu.qualityontime.diff.DiffSampleMother.B;
+import eu.qualityontime.diff.DiffSampleMother.C;
+import eu.qualityontime.diff.DiffSampleMother.Parent;
 
 @ExtensionMethod({ DiffExtension.class, CollectionExtension.class })
 @RunWith(HierarchicalContextRunner.class)

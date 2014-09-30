@@ -11,6 +11,7 @@ import lombok.Setter;
 import lombok.experimental.ExtensionMethod;
 
 import com.google.common.base.*;
+import com.google.common.base.Objects;
 
 import eu.qualityontime.*;
 import eu.qualityontime.collections.ListTryGet;
